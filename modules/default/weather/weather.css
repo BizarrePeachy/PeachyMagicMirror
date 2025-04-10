@@ -1,6 +1,6 @@
 .weather .weathericon,
 .weather .fa-home {
-  font-size: 75%;
+  font-size: 15;
   line-height: 65px;
   display: inline-block;
   transform: translate(0, -3px);

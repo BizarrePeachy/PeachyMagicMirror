@@ -4,10 +4,14 @@ Module.register("compliments", {
 	// Module config defaults.
 	defaults: {
 		compliments: {
-			anytime: ["Hey there sexy!"],
-			morning: ["Good morning, handsome!", "Enjoy your day!", "How was your sleep?"],
-			afternoon: ["Hello, beauty!", "You look sexy!", "Looking good today!"],
-			evening: ["Wow, you look hot!", "You look nice!", "Hi, sexy!"],
+			anytime: ["Hey, David!"],
+			morning: ["Good morning gang!", "Enjoy your day!", "How was your sleep?"],
+			afternoon: ["How was school?", "You look tired...", "Looking good today!"],
+			evening: ["How was your day?", "You look nice!", "Hi, David!", "What's the plan?"],
+			day_sunny: ["Oh cool I can see your skin!", "It's pretty nice outside!", "It's blazing out there!", "You should probably just wear a shirt", "No hoodie today :<"],
+			thunderstorm: ["ITS THUNDERINGGG YAAAAY!"],
+			night_clear: ["LATE NIGHT GRINDINGGG", "You should really go to bed ngl lol"],
+			night_showers: ["LAGGY LATE NIGHT GRINDINGGG"],
 			"....-01-01": ["Happy new year!"]
 		},
 		updateInterval: 30000,
