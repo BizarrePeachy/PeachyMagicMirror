@@ -78,10 +78,6 @@ let config = {
 			}
 		},
 		{
-			module: "MMM-JokeAPI",
-			position: "top_right",
-		},
-		{
 			module: "MMM-DailyPokemon",
 			header: "Pokemon of the day",
 			position: "top_left",
@@ -121,6 +117,14 @@ let config = {
 			}
 		},
 		{
+			module: "MMM-NFL",
+			position: "top_right",
+			header: "NFL STATS",
+			config: {
+				colored: true,
+			}
+		},
+		{
 			module: "compliments",
 			position: "bottom_bar",
 			config: {
@@ -150,6 +154,10 @@ let config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
 			}
+		},
+		{
+			module: "MMM-JokeApi",
+			positon:
 		},
 	]
 };
