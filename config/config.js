@@ -8,6 +8,8 @@
  * which will be converted to `config.js` while starting. For more information
  * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
  */
+
+
 let config = {
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
@@ -54,6 +56,15 @@ let config = {
 			}
 		},
 		{
+			module: "MMM-IronManGIF",
+			position: "middle_center",
+			config: {
+				style: 7,
+				maxWidth: "100%",
+				rotate: false,
+			}
+		},
+		{
 			module: "clock",
 			position: "top_left",
 			config: {
@@ -82,7 +93,7 @@ let config = {
 			header: "Pokemon of the day",
 			position: "top_left",
 			config: {
-				updateInterval: 600000,
+				updateInterval: 15000,
 				minPoke: 4,
 				maxPoke: 1025,
 				showType: true,
@@ -139,6 +150,13 @@ let config = {
 			}
 		},
 		{
+			module: "MMM-JokeApi",
+			position: "middle_center",
+			config: {
+				catagory: "Programming",
+			}
+		},
+		{
 			module: "newsfeed",
 			position: "bottom_bar",
 			config: {
@@ -154,10 +172,6 @@ let config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
 			}
-		},
-		{
-			module: "MMM-JokeApi",
-			positon:
 		},
 	]
 };
