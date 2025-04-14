@@ -136,9 +136,19 @@ let config = {
 			}
 		},
 		{
+			module: "MMM-PenPlotter",
+			position: "top_right",
+			config: {
+				imagePaths: ["modules/MMM-PenPlotter/example_svg"]
+			}
+		},
+		{
 			module: "MMM-ISS-Map",
 			positon: "top_right",
-			header: "Where the ISS is currently..."
+			header: "Where the ISS is currently...",
+			config: {
+				mapUrl: "https://api.mapbox.com/styles/v1/bizarrepeachy/cjp8vd7p807su2rqp8hc4dzoq/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYml6YXJyZXBlYWNoeSIsImEiOiJjbTlnZG00b3QwenVwMnJxMDBkdjRjcXNxIn0.5KpRVa3evbqHNkzWHT_U1A",
+			},
 		},
 		{
 			module: "compliments",
