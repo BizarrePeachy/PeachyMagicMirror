@@ -59,7 +59,7 @@ let config = {
 			module: "MMM-IronManGIF",
 			position: "middle_center",
 			config: {
-				style: 7,
+				style: 5,
 				maxWidth: "100%",
 				rotate: false,
 			}
@@ -134,6 +134,11 @@ let config = {
 			config: {
 				colored: true,
 			}
+		},
+		{
+			module: "MMM-ISS-Map",
+			positon: "top_right",
+			header: "Where the ISS is currently..."
 		},
 		{
 			module: "compliments",
