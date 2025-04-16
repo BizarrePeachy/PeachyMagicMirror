@@ -41,10 +41,10 @@ let config = {
 
 	modules: [
 		{
-			module: "alert",
+			module: 'MMM-JokeAPI',
+			position: 'top_center',
 			config: {
-				welcome_message: "Welcome Gaybo",
-				effect: "exploader"
+				category: "Programming"
 			}
 		},
 		{
@@ -105,6 +105,16 @@ let config = {
 			}
 		},
 		{
+			module: "MMM-RottenTomatoes",
+			position: "top_left",
+			config: {
+				showHeader: true,
+				showBoxOffice: true,
+				showOpeningThisWeek: true,
+				showComingSoon: true,
+			}
+		},
+		{
 			module: "weather",
 			position: "top_right",
 			config: {
@@ -125,14 +135,6 @@ let config = {
 				type: "forecast",
 				lat: 38.917274,
 				lon: -76.7252392
-			}
-		},
-		{
-			module: "MMM-NFL",
-			position: "top_right",
-			header: "NFL STATS",
-			config: {
-				colored: true,
 			}
 		},
 		{
