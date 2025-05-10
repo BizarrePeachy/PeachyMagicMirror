@@ -8,6 +8,8 @@
  * which will be converted to `config.js` while starting. For more information
  * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
  */
+
+
 let config = {
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
@@ -35,46 +37,92 @@ let config = {
 
 	logLevel: ["INFO", "LOG", "WARN", "ERROR"], // Add "DEBUG" for even more logging
 	timeFormat: 24,
-	units: "metric",
+	units: "imperial",
 
 	modules: [
 		{
-			module: "alert",
+			module: 'MMM-JokeAPI',
+			position: 'top_center',
+			config: {
+				category: "Programming"
+			}
 		},
 		{
 			module: "updatenotification",
-			position: "top_bar"
+			position: "top_center",
+			config: {
+				updateInterval: 60000,
+				sendUpdatesNotifications: true,
+			}
+		},
+		{
+			module: "MMM-IronManGIF",
+			position: "middle_center",
+			config: {
+				style: 5,
+				maxWidth: "100%",
+				rotate: false,
+			}
 		},
 		{
 			module: "clock",
-			position: "top_left"
+			position: "top_left",
+			config: {
+				timeFormat: 12,
+				showPeriodUpper: true,
+				showSunTimes: true,
+			}
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "Things happening",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
+						timeFormat: "dateheaders",
 						fetchInterval: 7 * 24 * 60 * 60 * 1000,
 						symbol: "calendar-check",
-						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
+						url: "https://calendar.google.com/calendar/ical/family09727604978895683682%40group.calendar.google.com/private-7fabd3da7b374c6f2b64d27db653af38/basic.ics"
 					}
 				]
 			}
 		},
 		{
-			module: "compliments",
-			position: "lower_third"
+			module: "MMM-DailyPokemon",
+			header: "Pokemon of the day",
+			position: "top_left",
+			config: {
+				updateInterval: 15000,
+				minPoke: 4,
+				maxPoke: 1025,
+				showType: true,
+				language: "en",
+				genera: true,
+				gbaMode: true,
+				nameSize: 15,
+				flavorText: false,
+			}
+		},
+		{
+			module: "MMM-RottenTomatoes",
+			position: "top_left",
+			config: {
+				showHeader: true,
+				showBoxOffice: true,
+				showOpeningThisWeek: true,
+				showComingSoon: true,
+			}
 		},
 		{
 			module: "weather",
 			position: "top_right",
 			config: {
 				weatherProvider: "openmeteo",
+				tempUnits: "imperial",
 				type: "current",
-				lat: 40.776676,
-				lon: -73.971321
+				lat: 38.917274,
+				lon: -76.7252392
 			}
 		},
 		{
@@ -83,9 +131,46 @@ let config = {
 			header: "Weather Forecast",
 			config: {
 				weatherProvider: "openmeteo",
+				tempUnits: "imperial",
 				type: "forecast",
-				lat: 40.776676,
-				lon: -73.971321
+				lat: 38.917274,
+				lon: -76.7252392
+			}
+		},
+		{
+			module: "MMM-PenPlotter",
+			position: "top_right",
+			config: {
+				imagePaths: ["modules/MMM-PenPlotter/example_svg"]
+			}
+		},
+		{
+			module: "MMM-ISS-Map",
+			positon: "top_right",
+			header: "Where the ISS is currently...",
+			config: {
+				mapUrl: "https://api.mapbox.com/styles/v1/bizarrepeachy/cjp8vd7p807su2rqp8hc4dzoq/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYml6YXJyZXBlYWNoeSIsImEiOiJjbTlnZG00b3QwenVwMnJxMDBkdjRjcXNxIn0.5KpRVa3evbqHNkzWHT_U1A",
+			},
+		},
+		{
+			module: "compliments",
+			position: "bottom_bar",
+			config: {
+				updateInterval: 10000,
+				fadeSpeed: 3000,
+
+				morningStartTime: 6,
+				morningEndTime: 13,
+
+				afternoonStartTime: 12,
+				afternoonEndTime: 22
+			}
+		},
+		{
+			module: "MMM-JokeApi",
+			position: "middle_center",
+			config: {
+				catagory: "Programming",
 			}
 		},
 		{
@@ -95,10 +180,11 @@ let config = {
 				feeds: [
 					{
 						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
 					}
 				],
 				showSourceTitle: true,
+				prohibitedWords: ['Trump', 'Tariff', 'China'],
 				showPublishDate: true,
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true

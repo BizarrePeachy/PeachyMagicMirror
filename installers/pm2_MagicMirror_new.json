@@ -1,0 +1,8 @@
+{
+  "apps" : [{
+    "name"        : "MagicMirror",
+    "cwd"         : "/home/peachy",
+    "script"      : "/home/peachy/MagicMirror/installers/mm.sh",
+    "watch"       : ["/home/peachy/MagicMirror/config/config.js"]
+  }]
+}
